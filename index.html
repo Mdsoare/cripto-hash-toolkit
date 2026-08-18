@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Hash Toolkit</title>
+
+    <!-- CSP Estrita de Alta Segurança -->
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self'; 
+        script-src 'self'; 
+        style-src 'self' https://fonts.googleapis.com; 
+        font-src 'self' https://fonts.gstatic.com; 
+        object-src 'none'; 
+        base-uri 'self'; 
+        form-action 'self';
+    ">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- JavaScript -->
+    <script src="assets/js/sha3.js" defer></script>
+    <script src="assets/js/script.js" defer></script>
+</head>
+
+<body>
+
+    <main class="container">
+        <header class="toolkit-header">
+            <h1>Crypto Hash Toolkit</h1>
+            <p>Geração nativa, validação e identificação de algoritmos criptográficos</p>
+        </header>
+
+        <!-- Navegação por Abas -->
+        <nav class="tab-navigation">
+            <button class="tab-btn active" data-tab="tab-generate">Gerar Hash</button>
+            <button class="tab-btn" data-tab="tab-identify">Identificar Algoritmo</button>
+        </nav>
+
+        <section class="card-content">
+            <!-- ABA 1: GERAR HASH -->
+            <div id="tab-generate" class="tab-pane active">
+                <div class="form-group">
+                    <label for="inputText">STRING OU TEXTO DE ENTRADA:</label>
+                    <textarea id="inputText" placeholder="Digite o texto para calcular o hash..." rows="4"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="algoSelect">ALGORITMO:</label>
+                    <select id="algoSelect">
+                        <optgroup label="Seguros (Web Crypto)">
+                            <option value="SHA-256" selected>SHA-256</option>
+                            <option value="SHA-512">SHA-512</option>
+                        </optgroup>
+                        <optgroup label="SHA-3 / Keccak (js-sha3)">
+                            <option value="SHA3-224">SHA3-224</option>
+                            <option value="SHA3-256">SHA3-256</option>
+                            <option value="SHA3-384">SHA3-384</option>
+                            <option value="SHA3-512">SHA3-512</option>
+                        </optgroup>
+                        <optgroup label="Legacy / Forense">
+                            <option value="SHA-1">SHA-1</option>
+                            <option value="MD5">MD5</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <div class="button-group">
+                    <button id="btnGenerate" class="btn primary">Gerar Hash</button>
+                    <button id="btnClearGenerate" class="btn secondary">Limpar</button>
+                </div>
+
+                <div class="result-box">
+                    <span class="label">HASH GERADO:</span>
+                    <div class="code-block" id="hashOutput">// O hash aparecerá aqui...</div>
+                </div>
+            </div>
+
+            <!-- ABA 2: IDENTIFICAR ALGORITMO -->
+            <div id="tab-identify" class="tab-pane">
+                <p class="tab-description">
+                    Insira qualquer hash hexadecimal para analisar seu comprimento e identificar os algoritmos
+                    possíveis.
+                </p>
+
+                <div class="form-group">
+                    <label for="hashToIdentify">HASH PARA ANÁLISE:</label>
+                    <input type="text" id="hashToIdentify" placeholder="Cole o hash aqui (ex: 289160db0d9f39f...)"
+                        autocomplete="off">
+                </div>
+
+                <div class="button-group">
+                    <button id="btnIdentify" class="btn primary">Analisar Hash</button>
+                    <button id="btnClearIdentify" class="btn secondary">Limpar</button>
+                </div>
+
+                <div id="identifyError" class="error-message" style="display: none;"></div>
+
+                <div class="result-box">
+                    <span class="label">ALGORITMOS COMPATÍVEIS IDENTIFICADOS:</span>
+                    <div class="code-block" id="identifyOutput">// Aguardando análise...</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+
+</html>
