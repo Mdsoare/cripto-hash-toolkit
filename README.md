@@ -51,6 +51,10 @@ Uma aplicação web leve, moderna e segura para **geração e análise heurísti
 
 ```text
 .
+├── .github/
+│   ├── dependabot.yml           # Configuração do Dependabot
+│   └── workflows/
+│       └── sec-scan.yml         # Workflow de CI DevSecOps
 ├── assets/
 │   ├── css/
 │   │   └── style.css       # Estilização global e componentes
