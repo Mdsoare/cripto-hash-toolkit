@@ -22,6 +22,14 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Recomendado para o TruffleHog analisar todo o histórico de commits
+
+      # Validação de Segurança de Secrets (Secret Detection)
+      - name: Scan para detecção de segredos (Secret Detection)
+        uses: trufflesecurity/trufflehog@main
+        with:
+          extra_args: --only-verified
 
       - name: CodeQL Initialization
         uses: github/codeql-action/init@v3
