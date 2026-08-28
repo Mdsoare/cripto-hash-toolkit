@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 :root {
     --bg-dark: #0f172a;
     --card-bg: #1e293b;
@@ -35,7 +37,7 @@ body {
     border: 1px solid var(--card-border);
     border-radius: 12px;
     padding: 32px;
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 25px -5px rgb(0 0 0 / 50%);
 }
 
 .toolkit-header {
@@ -172,12 +174,14 @@ select:focus {
 .button-group .btn.primary {
     flex: 1;
     width: auto;
+
     /* Anula o width: 100% para não quebrar a distribuição do Flexbox */
 }
 
 /* Estilo do Botão de Limpar */
 .btn.secondary {
     flex: 0 0 120px;
+
     /* Largura fixa para o botão de limpar */
     background-color: transparent;
     color: var(--text-secondary);

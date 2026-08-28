@@ -1,11 +1,22 @@
 # Crypto Hash Toolkit 🔐
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Security](https://img.shields.io/badge/Security-CSP_Compliant-success)](SECURITY)
-<!-- Badges das Linguagens e Ecossistema -->
+![CI Pipeline](https://github.com/Mdsoare/cripto-hash-toolkit/actions/workflows/ci-pipeline.yml/badge.svg)
+[![Security Rating](https://img.shields.io/badge/Security-DevSecOps%20Hardened-green?style=flat&logo=github)](https://github.com/Mdsoare/cripto-hash-toolkit/security/code-scanning)
+![Security: CSP Compliant](https://img.shields.io/badge/Security-CSP--Compliant-success.svg)
+![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
+
+<!-- Badges de Linguagens, Ecossistema e DevSecOps -->
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![NPM](https://img.shields.io/badge/NPM-CB3837?style=for-the-badge&logo=npm&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)
+![ESLint](https://img.shields.io/badge/ESLint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white)
+![Dependabot](https://img.shields.io/badge/Dependabot-025E8C?style=for-the-badge&logo=dependabot&logoColor=white)
+![SAST & SCA](https://img.shields.io/badge/DevSecOps-SAST%20%26%20SCA-red?style=for-the-badge&logo=shield&logoColor=white)
+
+---
 
 Uma aplicação web leve, moderna e segura para **geração e análise heurística de hashes criptográficos**. Desenvolvida para rodar 100% no lado do cliente (*client-side*), garantindo a privacidade dos dados processados.
 
@@ -49,23 +60,19 @@ Uma aplicação web leve, moderna e segura para **geração e análise heurísti
 
 ## 📂 Estrutura do Projeto
 
-```text
-.
-├── .github/
-│   ├── dependabot.yml           # Configuração do Dependabot
-│   └── workflows/
-│       └── sec-scan.yml         # Workflow de CI DevSecOps
-├── assets/
-│   ├── css/
-│   │   └── style.css       # Estilização global e componentes
-│   └── js/
-│       ├── script.js      # Lógica principal, abas e manipuladores
-│       └── sha3.js        # Módulo local para SHA-3 (js-sha3)
-├── .gitignore             # Arquivo de configuração do git
-├── index.html             # Interface principal da aplicação
-├── LICENSE                # Licença do projeto
-└── README.md              # Documentação do projeto
-```
+  ```text
+  .
+  ├── assets/
+  │   ├── css/
+  │   │   └── style.css       # Estilização global e componentes
+  │   └── js/
+  │       ├── script.js      # Lógica principal, abas e manipuladores
+  │       └── sha3.js        # Módulo local para SHA-3 (js-sha3)
+  ├── .gitignore             # Arquivo de configuração do git
+  ├── index.html             # Interface principal da aplicação
+  ├── LICENSE                # Licença do projeto
+  └── README.md              # Documentação do projeto
+  ```
 
 ---
 
@@ -75,15 +82,15 @@ Por ser uma aplicação web estática e client-side, não é necessária a insta
 
 ### 1. Clone o repositório
 
-```bash
-git clone https://github.com/Mdsoare/cripto-hash-toolkit.git
-```
+  ```bash
+  git clone https://github.com/Mdsoare/cripto-hash-toolkit.git
+  ```
 
 ### 2. Acesse a pasta do projeto
 
-```bash
-cd cripto-hash-toolkit
-```
+  ```bash
+  cd cripto-hash-toolkit
+  ```
 
 ### 3. Abra o arquivo `index.html` diretamente em qualquer navegador moderno
 
@@ -94,4 +101,5 @@ cd cripto-hash-toolkit
 Este projeto está sob a licença [MIT](LICENSE).
 
 ---
+
 *Desenvolvido por **Marcelo Soares** | Especialista em Segurança da Informação e Computação Forense.*

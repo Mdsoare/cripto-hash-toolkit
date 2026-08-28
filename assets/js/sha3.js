@@ -80,7 +80,7 @@
       throw new Error(INPUT_ERROR);
     }
     return [message, false];
-  }
+  };
 
   var empty = function (message) {
     return formatMessage(message)[0].length === 0;
@@ -92,7 +92,7 @@
       newArray[i] = array[i];
     }
     return newArray;
-  }
+  };
 
   var createOutputMethod = function (bits, padding, outputType) {
     return function (message) {

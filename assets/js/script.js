@@ -38,7 +38,7 @@ function initHashGenerator() {
         const algo = document.getElementById('algoSelect').value;
 
         if (!text) {
-            hashOutput.textContent = "// Insira um texto para gerar o hash.";
+            hashOutput.textContent = '// Insira um texto para gerar o hash.';
             return;
         }
 
@@ -46,7 +46,7 @@ function initHashGenerator() {
             const hash = await computeHash(text, algo);
             hashOutput.textContent = hash;
         } catch (error) {
-            console.error("Erro ao calcular hash:", error);
+            console.error('Erro ao calcular hash:', error);
             hashOutput.textContent = `// Erro: ${error.message}`;
         }
     });
@@ -145,6 +145,7 @@ function calculateMD5(string) {
         const lWordArray = Array(lNumberOfWords - 1);
         let lBytePosition = 0;
         let lByteCount = 0;
+        let lWordIndex = 0;
 
         while (lByteCount < lMessageLength) {
             lWordIndex = (lByteCount - (lByteCount % 4)) / 4;
@@ -162,10 +163,10 @@ function calculateMD5(string) {
     }
 
     function wordToHex(lValue) {
-        let WordToHexValue = "", WordToHexValue_temp = "", lByte, lCount;
+        let WordToHexValue = '', WordToHexValue_temp = '', lByte, lCount;
         for (lCount = 0; lCount <= 3; lCount++) {
             lByte = (lValue >>> (lCount * 8)) & 255;
-            WordToHexValue_temp = "0" + lByte.toString(16);
+            WordToHexValue_temp = '0' + lByte.toString(16);
             WordToHexValue += WordToHexValue_temp.substr(WordToHexValue_temp.length - 2, 2);
         }
         return WordToHexValue;
@@ -219,14 +220,14 @@ function initHashIdentifier() {
         errorMsg.style.display = 'none';
 
         if (!hash) {
-            identifyOutput.textContent = "// Insira um hash para análise.";
+            identifyOutput.textContent = '// Insira um hash para análise.';
             return;
         }
 
         if (!/^[a-f0-9]+$/i.test(hash)) {
-            errorMsg.textContent = "O valor fornecido não é um hash hexadecimal válido.";
+            errorMsg.textContent = 'O valor fornecido não é um hash hexadecimal válido.';
             errorMsg.style.display = 'block';
-            identifyOutput.textContent = "// Falha na validação.";
+            identifyOutput.textContent = '// Falha na validação.';
             return;
         }
 
@@ -234,12 +235,12 @@ function initHashIdentifier() {
         const matches = [];
 
         switch (len) {
-            case 32: matches.push("MD5", "NTLM", "MD4"); break;
-            case 40: matches.push("SHA-1", "RIPEMD-160"); break;
-            case 56: matches.push("SHA-224", "SHA3-224"); break;
-            case 64: matches.push("SHA-256", "SHA3-256", "BLAKE2s"); break;
-            case 96: matches.push("SHA-384", "SHA3-384"); break;
-            case 128: matches.push("SHA-512", "SHA3-512", "BLAKE2b"); break;
+            case 32: matches.push('MD5', 'NTLM', 'MD4'); break;
+            case 40: matches.push('SHA-1', 'RIPEMD-160'); break;
+            case 56: matches.push('SHA-224', 'SHA3-224'); break;
+            case 64: matches.push('SHA-256', 'SHA3-256', 'BLAKE2s'); break;
+            case 96: matches.push('SHA-384', 'SHA3-384'); break;
+            case 128: matches.push('SHA-512', 'SHA3-512', 'BLAKE2b'); break;
             default: matches.push(`Algoritmo não padronizado para tamanho de ${len} caracteres (${len * 4} bits).`);
         }
 
